@@ -36,12 +36,14 @@ with col3:
 
 if nombre:
     plt.barh(trabajadores["full name"], trabajadores["salary"], color=color)
+    plt.xlim(0,4600)
 else:
     plt.yticks([])  # Elimina las etiquetas del eje y
     plt.barh(trabajadores["full name"], trabajadores["salary"], color=color)
+    plt.xlim(0,4600)
 
 if salario:
     for i, v in enumerate(trabajadores["salary"]):
-        plt.text(v + 3, i - 0.3, str(v))
+        plt.text(v + 3, i - 0.3, str(v)+"€")
 
 st.pyplot(plt.gcf())
